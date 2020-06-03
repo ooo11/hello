@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+
+ 
+block content
+
+body
+    div
+        div.title.container-made2
+            h1(style =' background-color: #6eb0f1; color: whitesmoke;') Index ↵
+    div
+        div.contenedor1(ng-app="newApp" ng-controller="newCtrl" ng-cloak)
+           h1 {{new}}
+            
+
+block scripts
+    script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js")
+
+ 
+
+    //-code to select data for table
+    script.
+      var app = angular.module('newApp', []);
+      app.controller('newCtrl', function ($scope) {  
+            $scope.new = "this is new";
+
+        }); //-end of controller
+    
+ 
+
+
+
+ 
+      
