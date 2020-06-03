@@ -1,3 +1,5 @@
-# hello
+# Hello World
 
-test this is new hello 
+Lesson on learing Git. 
+
+Doing project using pug, javascript, angularjs, express, nodejs.
