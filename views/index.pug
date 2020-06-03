@@ -10,25 +10,19 @@ block content
 
 body
     div
-        div.title.container-made2
-            h1(style =' background-color: #6eb0f1; color: whitesmoke;') Index ↵
-    div
         div.contenedor1(ng-app="newApp" ng-controller="newCtrl" ng-cloak)
-           h1 {{new}}
+           h1 {{new}} {{site}}
             
 
 block scripts
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js")
-
- 
-
-    //-code to select data for table
     script.
-      var app = angular.module('newApp', []);
-      app.controller('newCtrl', function ($scope) {  
-            $scope.new = "this is new";
+        var app = angular.module('newApp', []);
+        app.controller('newCtrl', function ($scope) {
+            $scope.new = "Hello ";
+            $scope.site = "World";
 
-        }); //-end of controller
+        });
     
  
 
