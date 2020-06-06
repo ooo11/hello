@@ -11,7 +11,8 @@ block content
 body
     div
         div.contenedor1(ng-app="newApp" ng-controller="newCtrl" ng-cloak)
-           h1 {{new}} {{site}}
+            input(type="text" ng-model="site" placeholder= "your name here") 
+            h1 {{new}} {{site}}
             
 
 block scripts
@@ -20,7 +21,7 @@ block scripts
         var app = angular.module('newApp', []);
         app.controller('newCtrl', function ($scope) {
             $scope.new = "Hello ";
-            $scope.site = "World";
+            $scope.site = "your name here";
 
         });
     
