@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  // "scripts": {
-  //   "start": "nodemon ./start.js"
-  // },
   "keywords": [],
   "author": "ooo11",
   "license": "ISC",
@@ -20,9 +17,6 @@
     "mongoose-text-search": "0.0.2",
     "pug": "^2.0.4"
   },
-  // "devDependencies": {
-  //   "nodemon": "^2.0.2"
-  // },
   "engines": {
     "node": "13.8.0"
   }
