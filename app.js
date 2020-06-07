@@ -10,8 +10,8 @@ app.set('view engine', 'pug');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(express.static('public'));
-// Static
+app.use('/public', express.static(path.join(__dirname, '.', 'public')));
+
 
 app.use('/', routes);
 
