@@ -1,6 +1,6 @@
 const auth = require('http-auth');
 const express = require('express');
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const path = require('path');
 const { check, validationResult } = require('express-validator');
 
