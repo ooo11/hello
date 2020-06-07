@@ -1,0 +1,82 @@
+body {
+  padding: 40px 10px;
+  background-color: #e4eefa;
+}
+
+/* to remove the {{}} during loading */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+.container-made2 {
+  display: flex;
+  width: 100%;
+  margin: 0 0 1rem;
+  justify-content: center;
+  
+}
+.title h1 {
+  text-align: center;
+  font: 200 50px/1.5 Helvetica, Verdana, sans-serif;
+  color: rgb(145, 145, 145);
+  width: 250px;
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #333333; */
+
+}
+ 
+li {
+  float: left;
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  
+}
+
+li a{
+  text-decoration: none;
+  color: #9ea7c4;
+  font-size: 32px;
+  display: inline;
+  color: rgb(145, 145, 145);
+  
+  padding: 10px;
+}
+
+li a:hover {
+  background-color: #6eb0f1;
+  color: whitesmoke;
+}
+.noHover{
+  pointer-events: none;
+}
+
+.contenedor1{
+  
+  /* border: 3px solid green; */
+  padding: 10px;
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+
+}
+
+/* Search bar */
+.contenedor{
+  width: 740px;
+  margin: auto;
+  padding: 20px;
+  height: 100%;
+  border: 1px solid grey;
+  
+}
+
