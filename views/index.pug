@@ -4,15 +4,29 @@ html
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
     meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
-
+    link(rel='stylesheet', href='./newstyles.css')
  
 block content
 
 body
     div
         div.contenedor1(ng-app="newApp" ng-controller="newCtrl" ng-cloak)
-            input(type="text" ng-model="site" placeholder= "your name here") 
-            h1 {{new}} {{site}}
+            ul(ng-repeat="model in models") 
+                li 
+                    a(href='{{model.link}}') {{model.modelName}}
+                    a.noHover ➜
+                    a(href ='{{model.mainLink}}') Maintenance  
+            ul
+                li  
+                    a(href ='/all') All Parts
+                    a.noHover |
+                li
+                    a(href ='/addparts') Add Parts
+                    a.noHover |
+                    
+                li  
+                    a(href ='https://github.com/ooo11/Search-List' style =' background-color: #6eb0f1; color: whitesmoke;') About   
+
             
 
 block scripts
@@ -20,8 +34,29 @@ block scripts
     script.
         var app = angular.module('newApp', []);
         app.controller('newCtrl', function ($scope) {
-            $scope.new = "Hello ";
-            $scope.site = "your name here";
+            $scope.models = [
+                {
+                    modelName: '5DK-20',
+                    link: '/5dk20',
+                    mainLink: '/main/5DK-20'
+                },
+                {
+                    modelName: '6DK-20',
+                    link: '/6dk20',
+                    mainLink: '/main/6DK-20'
+                },
+                {
+                    modelName: '6DK-28',
+                    link: '/6dk28',
+                    mainLink: '/main/6DK-28'
+                },
+                {
+                    modelName: 'DE-18',
+                    link: '/de18',
+                    mainLink: '/main/DE-18'
+                },
+
+            ];
 
         });
     
