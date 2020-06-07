@@ -6,7 +6,7 @@ Lesson on learing Git.
 
 2. Edit the `package.json` file:
 
-        ```json
+```json
         "scripts": {
             "start": "node ./start.js"
         },
@@ -14,10 +14,10 @@ Lesson on learing Git.
         "engines": {
             "node": "13.8.0"
         },
-        ```
+```
 
 3. Commit to heroku
-        ```
+```
         $ heroku login
         $ heroku git:clone -a <Filename>
         $ cd <Filename>
@@ -25,7 +25,7 @@ Lesson on learing Git.
         $ git commit -am "input your comment here"
         $ git push heroku master
         
-        ```
+```
 
 4. Config vars
     go to heroku >>> app >>> Settings >>> 
