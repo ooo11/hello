@@ -3,10 +3,11 @@
 Lesson on learing Git. 
 
 1. Doing project using pug, javascript, angularjs, express, nodejs.
-2. Commit to github
+2. Commit to github. `$ git add .` which will add all files of the current directory
 ```
+$ git clone https://username:password@github.com/username/repository.git
 $ git config --global user.email "you@example.com"
-$ git config --global user.name "Your Name"
+$ git config --global user.name "Your Name" 
 $ git status 
 $ git commit -m "message"
 $ git push -u origin master
