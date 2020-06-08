@@ -28,8 +28,15 @@ block content
         div.contenedor1(style="height: 400px;")
           div(style="max-height:100%;overflow:auto;border:none; ")
             table.listing-table.table-dark.table-striped
-              thead
-                
+              thead(style="visibility: collapse; ")
+                tr 
+                  th
+                  th 
+                  th 
+                  th 
+                  th 
+                  th 
+                  th 
               tbody(ng-repeat="(key, value) in myData | fuzzy:search| groupBy: 'Group'" )
                 tr
                     th(colspan="7" id="thmain") {{ key }}

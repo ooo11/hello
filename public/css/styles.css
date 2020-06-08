@@ -185,6 +185,34 @@ h1 li a:hover {
   table-layout: fixed;
 
 }
+
+thead th:nth-child(1) {
+  width: 5%;
+}
+
+thead th:nth-child(2) {
+  width: 15%;
+}
+
+thead th:nth-child(3) {
+  width: 20%;
+}
+
+thead th:nth-child(4) {
+  width: 15%;
+}
+thead th:nth-child(5) {
+  width: 12%;
+}
+
+thead th:nth-child(6) {
+  width: 10%;
+}
+
+thead th:nth-child(7) {
+  width: 18%;
+}
+
 .listing-table th,
 .listing-table td {
   font-family:'Motnserrat',sans-serif;
@@ -194,6 +222,9 @@ h1 li a:hover {
   text-transform: uppercase;
   padding: 10px 8px;
   text-align: center;
+  letter-spacing: .2px;
+  word-wrap: break-word;
+  /* border: 3px solid purple; */
 }
 
 .listing-table th {
