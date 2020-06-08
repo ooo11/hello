@@ -1,0 +1,397 @@
+body {
+  padding: 40px 10px;
+  background-color: #e4eefa;
+}
+
+/* to remove the {{}} during loading */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #ff3333; */
+ }
+ li {
+     display: inline-block;
+}
+li a {
+  display: inline-block;
+  /* display: block; */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:not([href]){
+  display: inline-block;
+  color: rgb(145, 145, 145);
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+a:not([href]):hover{
+  text-decoration: none;
+  background-color: #6eb0f1;
+  color: whitesmoke;
+
+}
+input{
+  outline: none;
+  border: none;
+}
+li a:hover {
+  background-color: #add3fa;
+}
+
+
+h1 li {
+  text-decoration: none;
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  
+}
+
+h1 li a{
+  text-decoration: none;
+  font: 200 50px/1.5 Helvetica, Verdana, sans-serif;
+  color: rgb(145, 145, 145);
+}
+
+h1 li a:hover {
+  text-decoration: none;
+  background-color: #6eb0f1;
+  color: whitesmoke;
+}
+.noHover{
+  pointer-events: none;
+}
+
+.container-made {
+  width: 100%;
+  padding-right: 15px;
+  padding-top: 8rem;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-made2 {
+  display: flex;
+  width: 100%;
+  margin: 0 0 1rem;
+  justify-content: center;
+  
+}
+
+.title h1 {
+  text-align: center;
+  font: 200 50px/1.5 Helvetica, Verdana, sans-serif;
+  color: rgb(145, 145, 145);
+  
+}
+
+.listing-reg h1 {
+  text-align: center;
+  margin: 0 0 2rem;
+  font: 200 50px/1.5 Helvetica, Verdana, sans-serif;
+  color: rgb(145, 145, 145);
+}
+
+/* button */
+.btn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+
+
+.btn2 {
+  color: rgb(28, 30, 32)  !important;
+  text-decoration: none;
+  background: rgb(175, 202, 233);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 10px;
+  border: 1px solid rgb(175, 202, 233)  !important;
+  transition: all 0.4s ease 0s; 
+}
+
+.btn2:hover{
+  color: rgb(255, 255, 255)!important;
+  background: #003f63 ;
+  border-color: #003f63 !important;
+  transition: all 0.4s ease 0s;
+}
+
+
+/* css for registration form and errors*/
+
+.form-registration {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-registration {
+  display: flex;
+  flex-wrap: wrap;
+}
+.form-registration input {
+  width: 100%;
+  margin: 0px 0 10px;
+}
+.form-registration .btn {
+  flex: 1 0 100%;
+}
+.my-errors {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  color: #333;
+  font-size: 1.2rem;
+  display: table;
+}
+.my-errors li {
+  margin: 0 0 1rem;
+}
+.my-errors li:before {
+  content: "! Error : ";
+  color: #f00;
+  font-weight: bold;
+}
+
+/* Styles for listing table */
+
+.listing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: lightgrey;
+  overflow: hidden;
+  border-radius: 10px;
+  table-layout: fixed;
+
+}
+.listing-table th,
+.listing-table td {
+  font-family:'Motnserrat',sans-serif;
+  text-align: left;
+  font-size: 12px;
+  color: darkslategrey;
+  text-transform: uppercase;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.listing-table th {
+  background-color:#128494;
+  color: white;
+  padding: 10px 8px;
+  text-align: center;
+  
+}
+
+.listing-table #idth {
+  background-color: mediumseagreen;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  
+}
+
+#thmain {
+  background-color: rgb(139, 175, 165);
+  color: white;
+  font-size: 12px;
+  text-align:center;
+}
+
+.contenedor1{
+  width: 740px;
+  margin: auto;
+  height: 100%;
+
+}
+
+/* Search bar */
+.contenedor{
+  width: 740px;
+  margin: auto;
+  padding: 20px;
+  height: 100%;
+  border: 1px solid grey;
+}
+
+.wrapper {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  margin-top: 28%;
+  margin:auto;
+  transform: translate(-50%,-50%);
+}
+
+ .search_box{
+  width: 400px;
+  background: #fff;
+  border-radius: 5px;
+  height: 65px;
+  display: flex;
+  padding: 10px;
+  box-shadow: 0 8px 6px -10px #b3c6ff;
+}
+
+
+.search {
+	width: 350px;
+  height: 100%;
+  position: relative;
+}
+.input{
+ 
+  border: 0px;
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 38px;
+  color: #6f768d;
+  outline: none;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #9fa3b1;
+}
+
+.row-1 {
+  width: 5%;
+}
+.row-2{
+  width: 15%;
+}
+.row-3{
+  width: 25%;
+}
+.row-4{
+  width: 20%;
+}
+.row-5{
+  width: 15%;
+}
+.row-6{
+  width: 20%;
+}
+
+
+
+
+/* dropdown list for top*/
+.wrapperdrop {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%,-50%);
+  outline: none;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 12px;
+  border: none;
+  outline: none;
+}
+
+.dropdown {
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  align-content: center;
+  width: 100px;
+  border-right: 2px solid #dde2f1;
+  color: #9fa3b1;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  /* min-width: 160px; */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  outline: none;
+}
+
+.dropdown-content a {
+  color: rgb(54, 54, 54);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  outline: none;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/* this is for the button of maintenance list item */
+.columns {
+  column-width: 200px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 2em;
+  grid-template-columns: auto auto ;
+  grid-template-rows: auto auto auto auto auto ;
+  grid-auto-flow: column;
+
+  grid-gap: .5em;
+  align-items: center;
+  background: #eee;
+  padding: .8em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  border-radius: 2px;
+  counter-reset: nb;
+  /* border: 2px solid red; */
+}
+.btnmain {
+  border-radius: 4px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  padding: .5em;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  margin-right: 15px;
+}
+.jump{
+  background-color: #9CABF3;
+  box-shadow: 0 8px 15px rgba(0,0,0,.1);
+  transition: all .3s ease 0s;
+}
+.jump:hover {
+  background-color: #495DD3;
+  box-shadow: 0 15px 20px rgba(73, 93, 211, .4);
+  transform: translateY(-7px);
+}
+

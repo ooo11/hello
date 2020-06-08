@@ -1,0 +1,81 @@
+extends layout
+
+block content
+      body
+      .title
+        h1
+            li 
+                a(href='/') Index
+                a.noHover ➜
+                a(style =' background-color: #6eb0f1; color: whitesmoke;')= page
+                //- a.noHover ➜
+                //- a(href=mainLink) Maintenance 
+     
+      div.container-made.listing-reg(ng-app="myApp" ng-controller="myCtrlAll" ng-cloak)
+        div.wrapper.search_box
+            input.search.input(type="text" ng-model="search" placeholder="Search for parts...") 
+        div
+          table.listing-table.table-dark.table-striped.contenedor1
+            thead
+              tr
+                  th 
+                  th Drawing Number
+                  th Part Name
+                  th Part Number
+                  th Quantity
+                  th Model
+                  th Remarks           
+        div.contenedor1(style="height: 400px;")
+          div(style="max-height:100%;overflow:auto;border:none; ")
+            table.listing-table.table-dark.table-striped
+              thead
+                
+              tbody(ng-repeat="(key, value) in myData | fuzzy:search| groupBy: 'Group'" )
+                tr
+                    th(colspan="7" id="thmain") {{ key }}
+                tr(ng-repeat="x in value ") 
+                    td.bs-checkbox
+                      input(type="checkbox" ng-click="add(x)" ng-model="x.checked")
+                    td {{x.DrawingNo}}
+                    td {{x.PartName}}
+                    td {{x.PartNo}}
+                    td {{x.Quantity}}
+                    td {{x.Model}}
+                    td {{x.Remarks}}
+                    
+        
+        br
+        h1 Selected Parts List
+        div.container-made2
+          ul
+            li
+              a(ng-click='downloadReports_xlsx()') Print ⎙
+            li
+              a(ng-click='printToConsole()') Explain
+            li
+              a
+                input(type="text" name="input" ng-model="MTitem.text" placeholder="List name")
+                a(ng-click='#') Save
+                //- a(ng-click='getIDs()') Save
+        div
+          
+          table.listing-table.table-dark.table-striped.contenedor
+            thead
+              tr
+                  th
+                  th Drawing Number
+                  th Part Name
+                  th Part Number
+                  th Quantity
+            tbody(ng-repeat="(key2, value2) in myData2 | groupBy: 'Group'")
+              tr
+                  th(colspan="5" id="thmain") {{ key2 }}
+
+              tr(ng-repeat="x2 in value2")
+                  td {{$index + 1}}
+                  td {{x2.DrawingNo}}
+                  td {{x2.PartName}}
+                  td {{x2.PartNo}}
+                  td {{x2.Quantity}}
+                    
+                
