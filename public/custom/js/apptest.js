@@ -1,7 +1,9 @@
-app.controller('myCtrlAll', function ($http, $scope, MyService, $filter, $window) {
+app.controller('myCtrlAll', function ($http, $scope, MyService, $filter, $window, _) {
 	MyService.fdata().then(function (data) {
 		//-this is where all the data from the database is sent
 		$scope.myData = data;
+
+
 
 		//-making a new array to parse the myData to the selected item list
 		$scope.myData2 = new Array();
@@ -117,6 +119,9 @@ app.controller('myCtrlAll', function ($http, $scope, MyService, $filter, $window
 		// 	$scope.editingData[x2._id] = false;
 		// };
 
+		var ggroups = _.groupBy($scope.myData, "Group");
+		$scope.gGroups = ggroups;
+		console.log(ggroups);
 
 
 		//export to excel file

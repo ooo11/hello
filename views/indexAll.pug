@@ -24,7 +24,8 @@ block content
                   th Part Number
                   th Quantity
                   th Model
-                  th Remarks           
+                  th Remarks    
+                      
         div.contenedor1(style="height: 400px;")
           div(style="max-height:100%;overflow:auto;border:none; ")
             table.listing-table.table-dark.table-striped
@@ -37,19 +38,35 @@ block content
                   th 
                   th 
                   th 
-              tbody(ng-repeat="(key, value) in myData | fuzzy:search| groupBy: 'Group'" )
+                //- tbody(ng-repeat="(Group,Item) in gGroups")
+              tbody(ng-repeat="x in myData | filter: search: caseSensitive[optional] | groupBy: 'Group' ")
                 tr
-                    th(colspan="7" id="thmain") {{ key }}
-                tr(ng-repeat="x in value ") 
+                    th(colspan="7" id="thmain" ng-show="x.group_by_key" ) {{x.Group}} 
+                    //- th(colspan="7" id="thmain" ) {{Group}} 
+
+                tr
                     td.bs-checkbox
-                      input(type="checkbox" ng-click="add(x)" ng-model="x.checked")
+                      input(type="checkbox" ng-click="add(x)" )
                     td {{x.DrawingNo}}
                     td {{x.PartName}}
                     td {{x.PartNo}}
                     td {{x.Quantity}}
                     td {{x.Model}}
                     td {{x.Remarks}}
-                    
+              //- tbody(ng-repeat="(key, value) in myData |  groupBy: 'Group'")
+              //-   tr
+              //-       th(colspan="7" id="thmain" ng-hide="!isEmptyObject(key)") {{ key }} 
+
+              //-   tr(ng-repeat="x in value | filter: search: caseSensitive[optional]") 
+              //-       td.bs-checkbox
+              //-         input(type="checkbox" ng-click="add(x)" ng-model="x.checked")
+              //-       td {{x.DrawingNo}}
+              //-       td {{x.PartName}}
+              //-       td {{x.PartNo}}
+              //-       td {{x.Quantity}}
+              //-       td {{x.Model}}
+              //-       td {{x.Remarks}}
+                     
         
         br
         h1 Selected Parts List
@@ -74,11 +91,11 @@ block content
                   th Part Name
                   th Part Number
                   th Quantity
-            tbody(ng-repeat="(key2, value2) in myData2 | groupBy: 'Group'")
+            tbody(ng-repeat="x2 in myData2 | filter: search: caseSensitive[optional] | groupBy: 'Group' ")
               tr
-                  th(colspan="5" id="thmain") {{ key2 }}
+                  th(colspan="5" id="thmain" ng-show="x2.group_by_key") {{x2.Group}} 
 
-              tr(ng-repeat="x2 in value2")
+              tr
                   td {{$index + 1}}
                   td {{x2.DrawingNo}}
                   td {{x2.PartName}}
