@@ -21,8 +21,7 @@ block scripts
     script(src="/public/vendor/js/alasql.min.js")
     script(src="/public/vendor/js/jszip.js")
     script(src="/public/vendor/js/xlsx.js")
-    script(src="http://underscorejs.org/underscore-min.js")
-
+    
     //-code to select data for table
     script.
 
@@ -36,7 +35,7 @@ block scripts
       //- }]);
       
 
-      var app = angular.module('myApp', ['angular.filter','underscore']);
+      var app = angular.module('myApp', ['angular.filter']);
        
        app.filter("groupBy",["$parse","$filter",function($parse,$filter){
           return function(array,groupByField){

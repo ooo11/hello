@@ -1,4 +1,4 @@
-app.controller('myCtrlAll', function ($http, $scope, MyService, $filter, $window, _) {
+app.controller('myCtrlAll', function ($http, $scope, MyService, $filter, $window, ) {
 	MyService.fdata().then(function (data) {
 		//-this is where all the data from the database is sent
 		$scope.myData = data;
@@ -119,9 +119,9 @@ app.controller('myCtrlAll', function ($http, $scope, MyService, $filter, $window
 		// 	$scope.editingData[x2._id] = false;
 		// };
 
-		var ggroups = _.groupBy($scope.myData, "Group");
-		$scope.gGroups = ggroups;
-		console.log(ggroups);
+		// var ggroups = _.groupBy($scope.myData, "Group");
+		// $scope.gGroups = ggroups;
+		// console.log(ggroups);
 
 
 		//export to excel file

@@ -41,12 +41,12 @@ block content
                 //- tbody(ng-repeat="(Group,Item) in gGroups")
               tbody(ng-repeat="x in myData | filter: search: caseSensitive[optional] | groupBy: 'Group' ")
                 tr
-                    th(colspan="7" id="thmain" ng-show="x.group_by_key" ) {{x.Group}} 
+                    th(colspan="7" id="thmain" ng-show="x.group_by_key") {{x.Group}} 
                     //- th(colspan="7" id="thmain" ) {{Group}} 
 
                 tr
                     td.bs-checkbox
-                      input(type="checkbox" ng-click="add(x)" )
+                      input(type="checkbox" ng-click="add(x)")
                     td {{x.DrawingNo}}
                     td {{x.PartName}}
                     td {{x.PartNo}}
