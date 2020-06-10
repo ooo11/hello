@@ -1,4 +1,4 @@
-app.controller('myCtrlAll', function ($http, $scope, MyService, $filter, $window, ) {
+app.controller('myCtrlAll', function ($http, $scope, MyService, $filter, $window, _) {
 	MyService.fdata().then(function (data) {
 		//-this is where all the data from the database is sent
 		$scope.myData = data;
@@ -119,9 +119,31 @@ app.controller('myCtrlAll', function ($http, $scope, MyService, $filter, $window
 		// 	$scope.editingData[x2._id] = false;
 		// };
 
+
+		// $scope.gGroups = new Array();
 		// var ggroups = _.groupBy($scope.myData, "Group");
 		// $scope.gGroups = ggroups;
-		// console.log(ggroups);
+
+		//This is used to return the data in a nested Group so it can be display "Group" 
+		//as the header. Also this is to avoid any repetiton on the data loop which crash/slow the 
+		//search process
+		var grouped = _.chain($scope.myData).groupBy("Group").map(function (Parts, Group) {
+			// can use ._omit to remove any data u want for eg group but i dont intent to
+			//insted clean parts is returning "it" which is the data itself to the parts.
+			var cleanParts = _.map(Parts, function (it) {
+				return (it);
+			});
+
+			return {
+				Group: Group,
+				Parts: cleanParts
+			};
+		}).value();
+		$scope.gGroups = grouped
+
+		// console.log(grouped);
+		// console.log($scope.myData);
+		// console.log($scope.myData2);
 
 
 		//export to excel file

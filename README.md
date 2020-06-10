@@ -1,6 +1,6 @@
-# Hello World
+# Prototype to Hello
 
-Lesson on learing Git. 
+**DO NOT COMMIT THIS HERE PLEASE MAKE A COPPY AND REMOVE ALL THE COMMENTS FOR PRODUCTION**
 
 1. Doing project using pug, javascript, angularjs, express, nodejs.
 2. Commit to github. `$ git add .` which will add all files of the current directory
@@ -14,7 +14,7 @@ $ git push -u origin master
 
 ```
 
-3. Edit the `package.json` file:
+3. In production mode, please use `node` instead of `nodemon`. Edit the `package.json` file:
 
 ```json
         "scripts": {

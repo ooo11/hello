@@ -21,6 +21,7 @@ block scripts
     script(src="/public/vendor/js/alasql.min.js")
     script(src="/public/vendor/js/jszip.js")
     script(src="/public/vendor/js/xlsx.js")
+    script(src="http://underscorejs.org/underscore-min.js")
     
     //-code to select data for table
     script.
@@ -29,42 +30,59 @@ block scripts
       var links = '#{data}';
       //-console.log(links);
 
-      //- var underscore = angular.module('underscore', []);
-      //- underscore.factory('_', ['$window', function($window) {
-      //-   return $window._; // assumes underscore has already been loaded on the page
-      //- }]);
+      var underscore = angular.module('underscore', []);
+      underscore.factory('_', ['$window', function($window) {
+        return $window._; // assumes underscore has already been loaded on the page
+      }]);
       
 
-      var app = angular.module('myApp', ['angular.filter']);
+      var app = angular.module('myApp', ['angular.filter','underscore']);
+
        
-       app.filter("groupBy",["$parse","$filter",function($parse,$filter){
-          return function(array,groupByField){
-            var result	= [];
-                    var prev_item = null;
-                    var groupKey = false;
-                    var filteredData = $filter('orderBy')(array,groupByField);
-                    for(var i=0;i<filteredData.length;i++){
-                      groupKey = false;
-                      if(prev_item !== null){
-                        if(prev_item[groupByField] !== filteredData[i][groupByField]){
-                          groupKey = true;
-                        }
-                      } else {
-                        groupKey = true;  
-                      }
-                      if(groupKey){
-                        filteredData[i]['group_by_key'] =true;  
-                      } else {
-                        filteredData[i]['group_by_key'] =false;  
-                      }
-                      result.push(filteredData[i]);
-                      prev_item = filteredData[i];
-                      //- console.log(prev_item);
-                    }
-                    return result;
-                    
+        app.filter('custom', function() {
+          return function(input, search) {
+            if (!input) return input;
+            if (!search) return input;
+            var expected = ('' + search).toLowerCase();
+            var result = {};
+            angular.forEach(input, function(value, key) {
+              var actual = ('' + value).toLowerCase();
+              if (actual.indexOf(expected) !== -1) {
+                result[key] = value;
+              }
+            });
+            return result;
           }
-        }]);
+        });
+       
+      //-  app.filter("groupBy",["$parse","$filter",function($parse,$filter){
+      //-     return function(array,groupByField){
+      //-       var result	= [];
+      //-               var prev_item = null;
+      //-               var groupKey = false;
+      //-               var filteredData = $filter('orderBy')(array,groupByField);
+      //-               for(var i=0;i<filteredData.length;i++){
+      //-                 groupKey = false;
+      //-                 if(prev_item !== null){
+      //-                   if(prev_item[groupByField] !== filteredData[i][groupByField]){
+      //-                     groupKey = true;
+      //-                   }
+      //-                 } else {
+      //-                   groupKey = true;  
+      //-                 }
+      //-                 if(groupKey){
+      //-                   filteredData[i]['group_by_key'] =true;  
+      //-                 } else {
+      //-                   filteredData[i]['group_by_key'] =false;  
+      //-                 }
+      //-                 result.push(filteredData[i]);
+      //-                 prev_item = filteredData[i];
+      //-                 //- console.log(prev_item);
+      //-               }
+      //-               return result;
+                    
+      //-     }
+      //-   }]);
 
       
                   

@@ -28,5 +28,36 @@ router.get('/data', (req, res) => {
 
 });
 
+router.get('/api/repairlist', (req, res) => {
+
+    fs.readFile('./data/newlist.json', (err, json) => {
+        let obj = JSON.parse(json);
+        res.json(obj);
+    });
+
+});
+
+
+router.post('/api/repairlist', async (req, res) => {
+
+
+    ///this work in writing
+    const repairlist = req.body;
+    console.log(repairlist);
+    const jsonString = JSON.stringify(repairlist, null, 2);
+
+    console.log(jsonString);
+
+    fs.writeFile('./data/newlist.json', jsonString, err => {
+        if (err) {
+            console.log('Error writing file', err)
+        } else {
+            console.log('Successfully wrote file')
+        }
+    });
+
+
+});
+
 
 module.exports = router;

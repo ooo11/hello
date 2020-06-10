@@ -38,15 +38,14 @@ block content
                   th 
                   th 
                   th 
-                //- tbody(ng-repeat="(Group,Item) in gGroups")
-              tbody(ng-repeat="x in myData | filter: search: caseSensitive[optional] | groupBy: 'Group' ")
+              tbody(ng-repeat="all in gGroups | filter: search: caseSensitive[optional]")
+                //-tbody(ng-repeat="x in ::myData | filter: search: caseSensitive[optional] | groupBy: 'Group' ")
                 tr
-                    th(colspan="7" id="thmain" ng-show="x.group_by_key") {{x.Group}} 
-                    //- th(colspan="7" id="thmain" ) {{Group}} 
-
-                tr
+                  th(colspan="7" id="thmain" ) {{all.Group}} 
+                //-th(colspan="7" id="thmain" ng-show="x.group_by_key") {{x.group_by_key}} 
+                tr(ng-repeat="x in all.Parts | filter: search: caseSensitive[optional]")
                     td.bs-checkbox
-                      input(type="checkbox" ng-click="add(x)")
+                      input(type="checkbox" ng-click="add(x)" ng-model="x.checked")
                     td {{x.DrawingNo}}
                     td {{x.PartName}}
                     td {{x.PartNo}}
@@ -79,8 +78,8 @@ block content
             li
               a
                 input(type="text" name="input" ng-model="MTitem.text" placeholder="List name")
-                a Save
-                //- a(ng-click='getIDs()') Save
+                //-a Save
+                a(ng-click='getIDs()') Save
         div
           
           table.listing-table.table-dark.table-striped.contenedor
@@ -91,11 +90,11 @@ block content
                   th Part Name
                   th Part Number
                   th Quantity
-            tbody(ng-repeat="x2 in myData2 | filter: search: caseSensitive[optional] | groupBy: 'Group' ")
+            tbody(ng-repeat="(key,value) in myData2 |  groupBy: 'Group'")
               tr
-                  th(colspan="5" id="thmain" ng-show="x2.group_by_key") {{x2.Group}} 
+                  th(colspan="5" id="thmain" ) {{key}} 
 
-              tr
+              tr(ng-repeat="x2 in value") 
                   td {{$index + 1}}
                   td {{x2.DrawingNo}}
                   td {{x2.PartName}}
